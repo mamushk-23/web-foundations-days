@@ -1,0 +1,185 @@
+/* ---------- Reset & base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #f4f5f7;
+}
+
+/* ----------  Header ---------- */
+header {
+  background-color: #1f3a5f;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.25rem;
+}
+
+/* ---------- Navigation (Flexbox) ---------- */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;   /* centred row */
+  gap: 16px;                 /* 16px gap */
+  flex-wrap: wrap;           /* wraps on narrow screens */
+  padding: 0.75rem 1rem;
+  background-color: #16293f;
+}
+
+nav a {
+  color: #fff;               /* white text */
+  text-decoration: none;     /* no underline */
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background-color: #ffd166; /* visible hover style */
+  color: #16293f;
+}
+
+/* ---------- Main layout ---------- */
+main {
+  max-width: 960px;          /* centred with auto margins */
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  background-color: #fff;    /* white card look */
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+section h2 {
+  margin-bottom: 0.75rem;
+  color: #1f3a5f;
+}
+
+/* ----------  Features list as Grid cards ---------- */
+.features {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.features li {
+  background-color: #f9fafb;
+  border: 1px solid #e3e6ea;
+  border-left: 4px solid #1f3a5f;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+/* ----------  Shortcuts table ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #cbd2d9;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+
+th {
+  background-color: #1f3a5f;
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f4f6f8;
+}
+
+/* ----------  Feedback form ---------- */
+form {
+  display: flex;
+  flex-direction: column;    /* stacked vertically */
+  gap: 1rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: -0.5rem;    /* pulls label close to its field */
+}
+
+input,
+textarea,
+select {
+  width: 100%;               /* full width */
+  padding: 0.6rem;
+  border: 1px solid #cbd2d9;
+  border-radius: 4px;
+  font: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #1f3a5f;
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+/* ----------  Buttons with transition ---------- */
+button,
+input[type="submit"] {
+  align-self: flex-start;
+  background-color: #1f3a5f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.4rem;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #2f5c94;
+  transform: translateY(-2px);
+}
+
+button:active,
+input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* ----------  Media query for small screens ---------- */
+@media (max-width: 600px) {
+  header {
+    padding: 1rem 0.75rem;   /* reduced padding */
+  }
+
+  header h1 {
+    font-size: 1.4rem;       /* reduced font size */
+  }
+
+  main {
+    margin: 1rem auto;
+  }
+
+  section {
+    padding: 1rem;
+  }
+}
